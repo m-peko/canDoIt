@@ -1,0 +1,9 @@
+/*------------------------------------*\
+  #ANIMATIONS
+\*------------------------------------*/
+
+@-webkit-keyframes btnPulse {
+  from { background-color: #fcc02c; -webkit-box-shadow: 0 0 9px #fcc02c; }
+  50% { background-color: #fbb504; -webkit-box-shadow: 0 0 15px #fbb504; }
+  to { background-color: #fcc02c; -webkit-box-shadow: 0 0 9px #fcc02c; }
+}

@@ -1,0 +1,54 @@
+<!-- Register form -->
+<div class="row text-center register-form">
+    <div class="col-sm-6 col-sm-offset-1">
+        <div class="row reg-form-title">
+            <h3>Sign Up for Free</h3>
+        </div>
+        <form class="reg-form" action="" method="post" role="form">
+            <div class="form-group">
+                <label class="sr-only" for="reg-form-first-name">First name</label>
+                <input type="text" name="reg-form-first-name" placeholder="First name..."
+                       class="reg-form-first-name form-control" id="reg-form-first-name">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="reg-form-last-name">Last name</label>
+                <input type="text" name="reg-form-last-name" placeholder="Last name..."
+                       class="reg-form-last-name form-control" id="reg-form-last-name">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="reg-form-email">Email</label>
+                <input type="text" name="reg-form-email" placeholder="Email..."
+                       class="reg-form-email form-control" id="reg-form-email">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="reg-form-password">Password</label>
+                <input type="password" name="reg-form-password" placeholder="Password..." 
+                       class="reg-form-password form-control" id="reg-form-password">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="reg-form-confirm-password">Confirm password</label>
+                <input type="password" name="reg-form-confirm-password" placeholder="Confirm password..."
+                       class="reg-form-confirm-password form-control" id="reg-form-confirm-password">
+            </div>
+            <div class="form-group">
+                <div class="row reg-form-image-upload">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <img src="/img/trump.jpg" class="img-responsive img-circle reg-form-image" alt="User image"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row reg-form-text">
+                            <h4>Profile image</h4>
+                        </div>
+                        <div class="row">
+                            <label for="reg-form-upload" class="reg-form-upload button-custom">
+                                Upload
+                            </label>
+                            <input type="file" class="hide" id="reg-form-upload"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="button-custom" id="reg-form-submit-btn">Get Started</button>
+        </form>
+    </div>
+</div>

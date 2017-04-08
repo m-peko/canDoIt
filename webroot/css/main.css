@@ -1,0 +1,129 @@
+/*------------------------------------*\
+  #MAIN-CONTENT
+  (includes style for registration
+   and login forms)
+\*------------------------------------*/
+
+/**
+ * This is the style of the main
+ * content. .full-screen class is
+ * applied to html and body tags
+ * if there is #main-content div
+ * on the page.
+ */
+.full-screen {
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width:100%;
+}
+#main-content {
+    display: table;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #24272e;
+    opacity: 0.99;
+    color: #fff;
+}
+
+/**
+ * This is the style of the
+ * login / registration choose part.
+ */
+.show-forms {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.show-forms > a {
+    color: #fff;
+    text-decoration: none;
+}
+.show-forms > a > .show-register-form,
+.show-forms > a > .show-login-form {
+    cursor: pointer;
+}
+.show-forms > a > .show-register-form:hover,
+.show-forms > a > .show-login-form:hover {
+    color: #fcc02c;
+    opacity: 0.99;
+}
+.form-active {
+    color: #fcc02c;
+    opacity: 0.8;
+}
+
+/**
+ * This is the style of both,
+ * registration and login form.
+ */
+.reg-form-title,
+.reg-form-text,
+.log-form-title {
+    opacity: 0.5;
+}
+.reg-form-first-name,
+.reg-form-last-name,
+.reg-form-email,
+.reg-form-password,
+.reg-form-confirm-password,
+.log-form-username,
+.log-form-password {
+    background-color: #525660;
+    border-color: #525660;
+    border-radius: 1px;
+    color: #fff;
+    width: 300px;
+    margin: 10px auto;
+}
+.reg-form-first-name:focus,
+.reg-form-last-name:focus,
+.reg-form-email:focus,
+.reg-form-password:focus,
+.reg-form-confirm-password:focus,
+.log-form-username:focus,
+.log-form-password:focus {
+    border: 1px solid #fcc02c;
+    -webkit-box-shadow: 0px 0px 5px rgba(252, 192, 44, 0.75);
+    -moz-box-shadow: 0px 0px 5px rgba(252, 192, 44, 0.75);
+    box-shadow: 0px 0px 5px rgba(252, 192, 44, 0.75);
+}
+.reg-form-image-upload {
+    margin: 30px auto 20px auto;
+}
+.reg-form-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 10px;
+    cursor: pointer;
+}
+.reg-form-image {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #fcc02c;
+}
+#reg-form-submit-btn,
+#log-form-submit-btn {
+    width: 200px;
+    height: 30px;
+    margin: 10px auto;
+    -webkit-animation-name: btnPulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+/**
+ * This is the style of the
+ * about part of frontpage.
+ */
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+.social-media > a {
+    margin: 10px 30px;
+    color: #fcc02c;
+}
+.social-media > a:hover {
+    color: #fbb504;
+}

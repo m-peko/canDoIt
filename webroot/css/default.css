@@ -1,0 +1,45 @@
+/*------------------------------------*\
+  #DEFAULT
+\*------------------------------------*/
+
+/**
+ * This is the style that defines row
+ * with no margin.
+ */
+.row-no-margin {
+    margin: 0;
+}
+
+/**
+ * This is the style that defines
+ * vertically centered row.
+ */
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/**
+ * This is the style of custom button.
+ */
+.button-custom {
+    border: 0px;
+    border-radius: 1px;
+    background-color: #fcc02c;
+    color: #171a1f;
+    font-weight: bold;
+}
+.button-custom:hover,
+.button-custom:active,
+.button-custom:focus {
+    background-color: #fbb504 !important;
+}
+
+/**
+ * This is the style of custom
+ * input field with type 'text'.
+ */
+.input-text-custom {
+    border: 0px;
+    border-radius: 1px;
+}

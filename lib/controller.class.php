@@ -7,15 +7,15 @@
  */
 class Controller {
     protected $data;
-    protected $model;
+    protected $service;
     protected $parameters;
     
     public function getData() {
         return $this->data;
     }
     
-    public function getModel() {
-        return $this->model;
+    public function getService() {
+        return $this->service;
     }
     
     public function getParameters() {

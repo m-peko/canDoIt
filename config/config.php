@@ -2,7 +2,7 @@
 
 Config::set('webAppName', 'canDoIt');
 
-Config::set('defaultController', 'pages');
+Config::set('defaultController', 'registration');
 Config::set('defaultAction', 'index');
 
 // Settings regarding database connection

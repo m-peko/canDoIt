@@ -20,8 +20,6 @@ class App {
         
         //self::$database = Database::getInstance();
         
-        echo self::$router->getController().' '.self::$router->getAction();
-        
         $controllerClass = ucfirst(self::$router->getController()).'Controller';
         $controllerMethod = strtolower(self::$router->getAction());
         
@@ -37,8 +35,8 @@ class App {
             throw new Exception('Method '.$controllerMethod.' of class '.$controllerClass.' does not exist.');
         }
         
-        $layoutPath = VIEWS_PATH.DS.'user.html';
-        $layoutViewObject = new View(compact($content), $layoutPath);
+        $layoutPath = VIEWS_PATH.DS.'main.html';
+        $layoutViewObject = new View(compact('content'), $layoutPath);
         echo $layoutViewObject->render();
     }
 }

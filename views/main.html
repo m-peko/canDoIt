@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="full-screen">
+    <head>
+        <title><?=Config::get('webAppName')?></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/default.css">
+        <link rel="stylesheet" href="/css/animations.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body class="full-screen">
+        
+        <!-- Main page content -->
+        <div id="main-content" class="container-fluid">
+
+            <div class="row vertical-center-row">
+
+                <!-- About app and author -->
+                <div class="col-md-6">
+
+                    <div class="row text-center testimonials">
+                        <div class="col-sm-7 col-sm-offset-1">
+                        </div>
+                    </div>
+
+                    <div class="row text-center social-media">
+                        <a href="https://www.facebook.com/"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                        <a href="https://github.com/"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Registration and login -->
+                <div class="col-md-6">
+
+                    <div class="row text-center">
+                        <div class="col-sm-6 col-sm-offset-1 show-forms">
+                            <a href="/registration/"><span class="show-register-form form-active">Register</span></a>
+                            <span class="show-forms-divider"> | </span>
+                            <a href="/login/"><span class="show-login-form">Login</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Here inject view content -->
+                    <?=$data['content']?>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <!-- Third party libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- Custom JS -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>

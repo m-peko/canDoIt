@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Model class is the parent
- * class of all models used in
+ * Service class is the parent
+ * class of all services used in
  * web application.
  */
-class Model {
+class Service {
     protected $database;
     
     public function __construct() {
