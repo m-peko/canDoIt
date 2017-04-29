@@ -4,18 +4,27 @@
         <div class="row log-form-title">
             <h3>Welcome Back</h3>
         </div>
-        <form role="form" action="" method="post" class="log-form">
-                <div class="form-group">
-                <label class="sr-only" for="log-form-username">Username</label>
-                <input type="text" name="log-form-username" placeholder="Username..." 
-                       class="log-form-username form-control" id="log-form-username">
+        <form id="log-form" action="/login/index" method="post" role="form">
+            <div class="form-group">
+                <label class="sr-only" for="log-form-email">Username</label>
+                <input type="text" name="log-form-email" placeholder="Email..." 
+                       class="log-form-email form-control" id="log-form-email">
             </div>
             <div class="form-group">
                 <label class="sr-only" for="log-form-password">Password</label>
                 <input type="password" name="log-form-password" placeholder="Password..." 
                        class="log-form-password form-control" id="log-form-password">
             </div>
-            <button type="submit" class="button-custom" id="log-form-submit-btn">Sign in!</button>
+            <button type="button" class="button-custom" id="log-form-submit-btn">Sign in!</button>
+            <?php 
+                if(Session::get('loginError')) {
+            ?>
+            <div class="alert alert-danger" role="alert">
+            <?php 
+                echo Session::get('loginError');
+            ?>
+            </div>
+            <?php } ?>
         </form>
     </div>
 </div>

@@ -5,15 +5,11 @@
  * about a particular user.
  */
 class UserModel {
-    private $userID;
     private $firstName;
     private $lastName;
     private $email;
     private $hashedPassword;
-    
-    public function getUserID() {
-        return $this->userID;
-    }
+    private $imagePath;
     
     public function getFirstName() {
         return $this->firstName;
@@ -31,11 +27,15 @@ class UserModel {
         return $this->hashedPassword;
     }
     
-    public function __construct($userID, $firstName, $lastName, $email, $hashedPassword) {
-        $this->userID = $userID;
+    public function getImagePath() {
+        return $this->imagePath;
+    }
+    
+    public function __construct($firstName, $lastName, $email, $hashedPassword, $imagePath) {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
         $this->hashedPassword = $hashedPassword;
+        $this->imagePath = $imagePath;
     }
 }

@@ -46,13 +46,13 @@ class Router {
             $this->controller = strtolower(current($pathParts));
             array_shift($pathParts);
         }
-        
+
         // Get action
         if(current($pathParts)) {
             $this->action = strtolower(current($pathParts));
             array_shift($pathParts);
         }
-        
+
         // Get parameters
         $this->parameters = $pathParts;
     }

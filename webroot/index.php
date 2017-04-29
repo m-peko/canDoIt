@@ -7,6 +7,8 @@ define('LIB_PATH', ROOT.DS.'lib');
 define('MODELS_PATH', ROOT.DS.'models');
 define('VIEWS_PATH', ROOT.DS.'views');
 define('CONTROLLERS_PATH', ROOT.DS.'controllers');
+define('SERVICES_PATH', ROOT.DS.'services');
+define('FACTORIES_PATH', ROOT.DS.'factories');
 
 require_once(LIB_PATH.DS.'init.php');
 

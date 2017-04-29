@@ -4,7 +4,7 @@
         <div class="row reg-form-title">
             <h3>Sign Up for Free</h3>
         </div>
-        <form class="reg-form" action="" method="post" role="form">
+        <form id="reg-form" action="/registration/index" method="post" role="form">
             <div class="form-group">
                 <label class="sr-only" for="reg-form-first-name">First name</label>
                 <input type="text" name="reg-form-first-name" placeholder="First name..."
@@ -32,10 +32,10 @@
             </div>
             <div class="form-group">
                 <div class="row reg-form-image-upload">
-                    <div class="col-sm-4 col-sm-offset-2">
+                    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-2">
                         <img src="/img/trump.jpg" class="img-responsive img-circle reg-form-image" alt="User image"/>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-xs-5 col-sm-5 col-md-5">
                         <div class="row reg-form-text">
                             <h4>Profile image</h4>
                         </div>
@@ -48,7 +48,16 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="button-custom" id="reg-form-submit-btn">Get Started</button>
+            <button type="button" class="button-custom" id="reg-form-submit-btn">Get Started</button>
+            <?php 
+                if(Session::get('registrationError')) {
+            ?>
+            <div class="alert alert-danger" role="alert">
+            <?php 
+                echo Session::get('registrationError');
+            ?>
+            </div>
+            <?php } ?>
         </form>
     </div>
 </div>

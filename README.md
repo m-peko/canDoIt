@@ -1,2 +1,2 @@
 # canDoIt
-canDoIt is a simple web application used for task management 
+canDoIt is a web application for task management 

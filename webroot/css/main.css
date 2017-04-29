@@ -67,7 +67,7 @@
 .reg-form-email,
 .reg-form-password,
 .reg-form-confirm-password,
-.log-form-username,
+.log-form-email,
 .log-form-password {
     background-color: #525660;
     border-color: #525660;
@@ -81,7 +81,7 @@
 .reg-form-email:focus,
 .reg-form-password:focus,
 .reg-form-confirm-password:focus,
-.log-form-username:focus,
+.log-form-email:focus,
 .log-form-password:focus {
     border: 1px solid #fcc02c;
     -webkit-box-shadow: 0px 0px 5px rgba(252, 192, 44, 0.75);
@@ -110,6 +110,13 @@
     -webkit-animation-name: btnPulse;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
+}
+.input-warning,
+.input-warning:focus {
+    border-color: #e60000;
+    -webkit-box-shadow: 0px 0px 5px rgba(230, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px rgba(230, 0, 0, 0.75);
+    
 }
 
 /**

@@ -17,14 +17,14 @@ class App {
     
     public static function run($uri) {
         self::$router = new Router($uri);
-        
-        //self::$database = Database::getInstance();
+
+        self::$database = Database::getInstance();
         
         $controllerClass = ucfirst(self::$router->getController()).'Controller';
         $controllerMethod = strtolower(self::$router->getAction());
-        
+
         // Calling controller's method
-        $controllerObject = new $controllerClass();
+        $controllerObject = ControllerFactory::makeController($controllerClass);
         if(method_exists($controllerObject, $controllerMethod)) {
             // Controller's action may return a view path
             $viewPath = $controllerObject->$controllerMethod();

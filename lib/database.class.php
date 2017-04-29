@@ -47,7 +47,45 @@ class Database {
         return $data;
     }
     
+    public function queryWithParameters($sql, $parameters) {
+        if(!$this->connection) {
+            return false;
+        }
+        
+        $stmt = $this->connection->prepare($sql);
+        
+        array_unshift($parameters, str_repeat('s', count($parameters)));
+        
+        call_user_func_array(array($stmt, 'bind_param'), $this->makeValuesReferenced($parameters));
+        
+        if($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if(is_bool($result)) {
+                return $result;
+            }
+            
+            $data = array();
+            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                $data[] = $row;
+            }
+            
+            return $data;
+        }
+        else {
+            throw new Exception('Could not execute SQL statement.');
+        }
+    }
+
     public function escape($str) {
         return mysqli_escape_string($this->connection, $str);
+    }
+    
+    private function makeValuesReferenced($array) {
+        $refs = array();
+        foreach($array as $key => $value) {
+            $refs[$key] = &$array[$key];
+        }
+        return $refs;
     }
 }
