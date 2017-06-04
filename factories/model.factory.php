@@ -11,7 +11,7 @@ class ModelFactory {
         switch($className) {
             case 'UserModel':
                 $modelObject = new UserModel($parameters[0], $parameters[1], $parameters[2],
-                                             $parameters[3], $parameters[4]);
+                                             $parameters[3], $parameters[4]); // TODO(m-peko): Improve this approach
                 break;
             default:
                 break;

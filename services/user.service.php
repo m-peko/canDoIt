@@ -21,7 +21,7 @@ class UserService extends Service {
         
         $user = ModelFactory::makeModel('UserModel', array($firstName, $lastName, $email, $hashedPassword, ''));
 
-        if(!$this->checkIfEmailExists($email)) {
+        if($this->checkIfEmailExists($email)) {
             if(!$this->createNewUser($user)) {
                 Session::set('registrationError', '');
                 return true;
@@ -39,9 +39,9 @@ class UserService extends Service {
     
     public function login($email, $password) {
         $email = $this->database->escape($email);
-        $hashedPassword = $this->hashPassword($this->database->escape($password));
+        $password = $this->database->escape($password);
 
-        if(!$this->checkIfUserExists($email, $hashedPassword)) {
+        if($this->checkIfUserExists($email, $password)) {
             Session::set('loginError', '');
             return true;
         }
@@ -49,6 +49,16 @@ class UserService extends Service {
             Session::set('loginError', 'User with these credentials does not exist');
             return false;
         }
+    }
+    
+    public function getUserId($email, $password) {
+        $sql = 'SELECT userId, hashedPassword FROM users WHERE email=? LIMIT 1';
+        $parameters = array($email);
+        $result = $this->database->queryWithParameters($sql, $parameters)[0];
+        if(password_verify($password, $result['hashedPassword'])) {
+            return $result['userId'];
+        }
+        return NULL;
     }
     
     private function hashPassword($password) {
@@ -62,15 +72,16 @@ class UserService extends Service {
         return $this->database->queryWithParameters($sql, $parameters);
     }
     
-    private function checkIfUserExists($email, $hashedPassword) {
-        $sql = 'SELECT COUNT(1) AS user FROM users WHERE email=? AND hashedPassword=?';
-        $parameters = array($email, $hashedPassword);
-        return $this->database->queryWithParameters($sql, $parameters)['user'] == 1;
+    private function checkIfUserExists($email, $password) {
+        $sql = 'SELECT hashedPassword FROM users WHERE email=? LIMIT 1';
+        $parameters = array($email);
+        $hashedPassword = $this->database->queryWithParameters($sql, $parameters)[0]['hashedPassword'];
+        return password_verify($password, $hashedPassword);
     }
     
     private function checkIfEmailExists($email) {
         $sql = 'SELECT COUNT(1) AS email FROM users WHERE email=?';
         $parameters = array($email);
-        return $this->database->queryWithParameters($sql, $parameters)['email'] == 1;
+        return $this->database->queryWithParameters($sql, $parameters)[0]['email'] != 1;
     }
 }

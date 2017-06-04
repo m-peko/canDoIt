@@ -27,7 +27,9 @@ class LoginController extends Controller {
                 }
                 else {
                     App::getRouter()->redirect('/'); // TODO(m-peko): Redirect to the next page
+                    Session::set('userId', $this->service->getUserId($email, $password));
                     Session::delete('loginError');
+                    Session::delete('registrationError');
                 }
             }
         }
