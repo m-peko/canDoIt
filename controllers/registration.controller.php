@@ -26,10 +26,10 @@ class RegistrationController extends Controller {
                 $result = $this->service->register($firstName, $lastName, $email, $password);
                 
                 if(!$result) {
-                    App::getRouter()->redirect('/'); // Redirect to the home (registration) page
+                    App::getRouter()->redirect('/'); // Redirect to the registration page
                 }
                 else {
-                    App::getRouter()->redirect('/'); // TODO(m-peko): Redirect to the next page
+                    App::getRouter()->redirect('/app');
                     Session::set('userId', $this->service->getUserId($email, $password));
                     Session::delete('registrationError');
                     Session::delete('loginError');

@@ -3,7 +3,7 @@
 /**
  * App class is the main part of web
  * application. It contains routing logic
- * (processes uri, creates controllers and
+ * (processes URI, creates controllers and
  * calls render methods).
  */
 class App {
@@ -23,6 +23,11 @@ class App {
         $controllerClass = ucfirst(self::$router->getController()).'Controller';
         $controllerMethod = strtolower(self::$router->getAction());
 
+        $layout = self::$router->getRoute();
+        if($layout == 'app' && !Session::get('userId')) {
+            self::$router->redirect('/main/');
+        }
+        
         // Calling controller's method
         $controllerObject = ControllerFactory::makeController($controllerClass);
         if(method_exists($controllerObject, $controllerMethod)) {
@@ -35,8 +40,16 @@ class App {
             throw new Exception('Method '.$controllerMethod.' of class '.$controllerClass.' does not exist.');
         }
         
-        $layoutPath = VIEWS_PATH.DS.'main.html';
-        $layoutViewObject = new View(compact('content'), $layoutPath);
+        $layoutPath = VIEWS_PATH.DS.$layout.'.html';
+        if($layout == 'main') {
+            $layoutViewObject = new View(compact('content'), $layoutPath);
+        }
+        else {
+            $layoutViewObject = new View(
+                    array('content' => $content,
+                          'user' => $controllerObject->getService()->getUserById(Session::get('userId'))),
+                    $layoutPath);
+        }
         echo $layoutViewObject->render();
     }
 }

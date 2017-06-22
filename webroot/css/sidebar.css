@@ -1,0 +1,230 @@
+/*------------------------------------*\
+  #SIDEBAR
+\*------------------------------------*/
+
+/**
+ * This is the style of sidebar wrapper
+ * (aside tag). When sidebar is open, the
+ * width is 250px. When .sidebar-mini
+ * class is applied to body, sidebar's
+ * width is 60px.
+ */
+#sidebar {
+    z-index: 1;
+    position: absolute;
+    padding-top: 100px;
+    width: 250px;
+    height: 100%;
+    overflow-y: hidden;
+    background: #24272e;
+    color: #fff;
+    opacity: 0.99;
+    transition: all .5s;
+}
+
+/**
+ * This is the style of content about
+ * user (image, name and email) of
+ * sidebar.
+ */
+.sidebar-user > .sidebar-user-img,
+.sidebar-user > .sidebar-user-info {
+    margin: 0;
+}
+.sidebar-user > .sidebar-user-img > img {
+    margin: auto;
+    height: 100px;
+    width: 100px;
+}
+
+/**
+ * This is the style of search part
+ * of sidebar.
+ */
+.sidebar-search {
+    margin: 30px 10px;
+}
+#sidebar-search-box {
+    background-color: #525660;
+    border-color: #525660;
+    border-radius: 1px;
+    color: #fff;
+}
+#sidebar-search-box:focus {
+    box-shadow: none;
+    border-color: #3a3d44;
+}
+
+/**
+ * This is the style of navigation
+ * part of sidebar.
+ */
+.sidebar-navigation {
+    padding: 0;
+    list-style: none;
+}
+.sidebar-navigation > li {
+    text-indent: 10px;
+    line-height: 45px;
+}
+.sidebar-navigation > li > a {
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    color: #6c707a;
+    border-left: 4px solid #24272e;
+}
+.sidebar-navigation > li > a:hover,
+.sidebar-navigation > li > a.active {
+    color: #fcc02c;
+    border-left: 4px solid #fcc02c;
+    background-color: #171a1f;
+}
+#sidebar-logout-mini-btn {
+    display: none;
+    margin: 10px auto;
+}
+#sidebar-logout-mini-btn > a {
+    color: inherit;
+    text-decoration: none;
+}
+.sidebar-navigation-icon-right {
+    float: right;
+    line-height: 45px;
+    margin-right: 20px;
+    font-weight: bold;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+.sidebar-navigation-icon-down {
+    transform: rotate(90deg);
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+.sidebar-dropdown {
+    padding: 0;
+    list-style: none;
+}
+.sidebar-dropdown > li {
+    background-color: #171a1f;
+    text-indent: 15px;
+}
+.sidebar-dropdown > li > a {
+    display: block;
+    text-decoration: none;
+    color: #6c707a;
+}
+.sidebar-dropdown > li > a:hover,
+.sidebar-dropdown > li > a:active {
+    color: #fcc02c;
+}
+
+/**
+ * List item with class
+ * .sidebar-dropdown-title
+ * appears only when .sidebar-mini
+ * class is applied to body tag.
+ */
+.sidebar-dropdown > .sidebar-dropdown-title {
+    display: none;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fcc02c;
+}
+
+/**
+ * This is the style of logout part
+ * of sidebar. Class
+ * .button-custom is placed in
+ * default.css file.
+ */
+.sidebar-logout {
+    text-align: center;
+    margin-top: 20px;
+}
+.sidebar-logout > .button-custom {
+    width: 150px;
+}
+.sidebar-logout > .button-custom > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*------------------------------------*\
+  #SIDEBAR-MINI
+\*------------------------------------*/
+
+/**
+ * When .sidebar-mini class is applied
+ * to body tag, #app-content
+ * has this style.
+ */
+body.sidebar-mini #app-content {
+    padding-left: 60px;
+}
+
+/**
+ * This is the style of sidebar when
+ * .sidebar-mini class is applied to
+ * body tag.
+ */
+body.sidebar-mini #sidebar {
+    width: 60px;
+}
+body.sidebar-mini .sidebar-user > .sidebar-user-info,
+body.sidebar-mini .sidebar-search,
+body.sidebar-mini .sidebar-logout {
+    display: none;
+}
+body.sidebar-mini .sidebar-user > .sidebar-user-img > img {
+    margin: 0px auto 20px auto;
+    height: 50px;
+    width: 50px;
+}
+body.sidebar-mini .sidebar-navigation > li > a > span {
+    display: none;
+}
+body.sidebar-mini #sidebar-logout-mini-btn {
+    display: block;
+}
+body.sidebar-mini .sidebar-navigation-icon-right {
+    float: none;
+    margin-right: 0px;
+}
+body.sidebar-mini .sidebar-navigation-icon-down {
+    transform: rotate(0deg);
+}
+
+/**
+ * Changing overflow property to
+ * visible enables sidebar-dropdown to
+ * exceed his parent's boundaries.
+ */
+body.sidebar-mini,
+body.sidebar-mini #sidebar,
+body.sidebar-mini .sidebar-navigation,
+body.sidebar-mini .sidebar-navigation > li {
+    overflow: visible;
+}
+
+/**
+ * This style defines the position
+ * of sidebar-dropdown when .sidebar-mini
+ * class is applied to body tag.
+ */
+body.sidebar-mini .sidebar-dropdown {
+    background-color: #171a1f;
+    width: 190px;
+    position: absolute;
+    -ms-transform: translate(60px,-45px); /* IE 9 */
+    -webkit-transform: translate(60px,-45px); /* Safari */
+    transform: translate(60px,-45px); /* Standard syntax */
+}
+body.sidebar-mini .sidebar-dropdown-title {
+    display: block;
+}

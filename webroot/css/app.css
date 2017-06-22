@@ -1,0 +1,18 @@
+/*------------------------------------*\
+  #APP-CONTENT
+\*------------------------------------*/
+
+/**
+ * This is the style of the app
+ * content. All app related
+ * functionalities are placed in here.
+ * This style is changing when
+ * .sidebar-mini class is applied
+ * to body tag (check that style in
+ * sidebar.css).
+ */
+#app-content {
+    padding-left: 250px;
+    padding-top: 60px;
+    transition: all .5s;
+}

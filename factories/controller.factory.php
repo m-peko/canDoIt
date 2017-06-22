@@ -15,6 +15,9 @@ class ControllerFactory {
             case 'LoginController':
                 $controllerObject = new LoginController($parameters);
                 break;
+            case 'TasksController':
+                $controllerObject = new TasksController($parameters);
+                break;
             default:
                 break;
         }

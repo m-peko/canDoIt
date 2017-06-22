@@ -10,6 +10,7 @@ class Router {
     protected $controller;
     protected $action;
     protected $parameters;
+    protected $route;
     
     public function getUri() {
         return $this->uri;
@@ -27,10 +28,16 @@ class Router {
         return $this->parameters;
     }
     
+    public function getRoute() {
+        return $this->route;
+    }
+    
     public function __construct($uri) {
         $this->uri = urldecode(trim($uri, '/'));
 
         // Get defaults
+        $routes = Config::get('routes');
+        $this->route = Config::get('defaultRoute');
         $this->controller = Config::get('defaultController');
         $this->action = Config::get('defaultAction');
         
@@ -40,6 +47,13 @@ class Router {
         $path = $uriParts[0];
         
         $pathParts = explode('/', $path);
+        
+        // Get route
+        if(in_array(strtolower(current($pathParts)), array_keys($routes))) {
+            $this->route = strtolower(current($pathParts));
+            $this->controller = $routes[$this->route];
+            array_shift($pathParts);
+        }
         
         // Get controller
         if(current($pathParts)) {

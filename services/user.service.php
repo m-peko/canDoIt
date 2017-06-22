@@ -61,6 +61,12 @@ class UserService extends Service {
         return NULL;
     }
     
+    public function getUserById($userId) {
+        $sql = 'SELECT firstName, lastName, email FROM users WHERE userId=? LIMIT 1';
+        $parameters = array($userId);
+        return $this->database->queryWithParameters($sql, $parameters)[0];
+    }
+    
     private function hashPassword($password) {
         return password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
     }

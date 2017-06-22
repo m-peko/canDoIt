@@ -2,6 +2,13 @@
 
 Config::set('webAppName', 'canDoIt');
 
+// Route name => default controller
+Config::set('routes', array(
+    'main' => 'registration',
+    'app' => 'tasks'
+));
+
+Config::set('defaultRoute', 'main');
 Config::set('defaultController', 'registration');
 Config::set('defaultAction', 'index');
 

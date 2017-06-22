@@ -4,7 +4,7 @@
  * Database class is responsible for
  * establishing connection to database
  * and executing database queries. It is
- * implemented using singleton pattern. 
+ * implemented using Singleton pattern. 
  */
 class Database {
     private static $instance;
